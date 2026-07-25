@@ -18,13 +18,11 @@ body{
 
     color:white;
 
-    background-image:url("assets/hero.png");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
+    background:url("assets/hero.png") center center / cover no-repeat fixed;
 
     min-height:100vh;
+
+    overflow-x:hidden;
 
 }
 
@@ -49,7 +47,7 @@ header{
 
     align-items:center;
 
-    padding:28px 8%;
+    padding:25px 6%;
 
     z-index:999;
 
@@ -57,11 +55,11 @@ header{
 
 .logo{
 
-    font-size:22px;
+    font-size:18px;
 
     font-weight:700;
 
-    letter-spacing:1px;
+    letter-spacing:3px;
 
     color:white;
 
@@ -71,7 +69,7 @@ nav{
 
     display:flex;
 
-    gap:50px;
+    gap:45px;
 
 }
 
@@ -81,7 +79,7 @@ nav a{
 
     text-decoration:none;
 
-    font-size:20px;
+    font-size:17px;
 
     font-weight:500;
 
@@ -102,26 +100,79 @@ nav a:hover{
 
 .hero{
 
+    position:relative;
+
     width:100%;
 
-    height:100vh;
+    height:76vh;
+
+}
+
+/* TEXTO SOBRE LA PARED */
+
+.hero-title{
+
+    position:absolute;
+
+    right:5%;
+
+    top:18%;
+
+    font-size:8rem;
+
+    font-weight:900;
+
+    line-height:.88;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    transform:
+        perspective(1400px)
+        rotateY(-30deg)
+        rotateZ(-9deg);
+
+    transform-origin:right center;
+
+    background:linear-gradient(
+
+        #d7d7d7,
+
+        #b9b9b9,
+
+        #8d8d8d,
+
+        #666,
+
+        #3d3d3d
+
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+
+        3px 3px 8px rgba(255,255,255,.05),
+
+        8px 10px 25px rgba(0,0,0,.35),
+
+        15px 20px 40px rgba(0,0,0,.45);
 
 }
 
 
 /* ===========================
-   ESTADÍSTICAS
+   TARJETA
 =========================== */
 
 .stats{
 
-    width:85%;
+    width:min(1200px,90%);
 
-    max-width:1300px;
-
-    margin:auto;
-
-    margin-top:-120px;
+    margin:-70px auto 50px;
 
     display:flex;
 
@@ -129,21 +180,27 @@ nav a:hover{
 
     align-items:center;
 
-    padding:45px;
+    gap:20px;
 
-    border-radius:30px;
+    padding:30px 40px;
 
-    background:rgba(255,255,255,.15);
+    border-radius:28px;
+
+    background:rgba(255,255,255,.12);
 
     backdrop-filter:blur(18px);
 
     -webkit-backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,.2);
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
 
 }
 
 .stats div{
+
+    flex:1;
 
     text-align:center;
 
@@ -151,21 +208,21 @@ nav a:hover{
 
 .stats h2{
 
-    font-size:58px;
+    font-size:42px;
 
     font-weight:800;
-
-    color:white;
 
 }
 
 .stats p{
 
-    margin-top:12px;
+    margin-top:8px;
 
-    font-size:20px;
+    font-size:16px;
 
     color:white;
+
+    opacity:.9;
 
 }
 
@@ -174,23 +231,39 @@ nav a:hover{
    RESPONSIVE
 =========================== */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
     header{
 
         flex-direction:column;
 
-        gap:20px;
+        gap:18px;
 
     }
 
     nav{
 
-        gap:25px;
-
         flex-wrap:wrap;
 
         justify-content:center;
+
+        gap:18px;
+
+    }
+
+    .hero{
+
+        height:65vh;
+
+    }
+
+    .hero-title{
+
+        font-size:4rem;
+
+        right:8%;
+
+        top:25%;
 
     }
 
@@ -198,7 +271,9 @@ nav a:hover{
 
         flex-direction:column;
 
-        gap:40px;
+        gap:30px;
+
+        padding:30px;
 
     }
 

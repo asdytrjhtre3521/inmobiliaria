@@ -16,11 +16,9 @@ body{
 
     color:white;
 
-    background-image:url("assets/hero.png");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    background-repeat:no-repeat;
+    background:url("assets/hero.png") center center / cover no-repeat fixed;
+
+    min-height:100vh;
 
 }
 
